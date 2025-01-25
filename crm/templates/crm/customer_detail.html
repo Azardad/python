@@ -1,0 +1,29 @@
+{% extends 'crm/base.html' %}
+
+{% block title %}جزئیات مشتری - {{ customer.name }}{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <h3 class="card-title">جزئیات مشتری: {{ customer.name }}</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>ایمیل:</strong> {{ customer.email }}</p>
+                <p><strong>تلفن:</strong> {{ customer.phone }}</p>
+                <p><strong>آدرس:</strong> {{ customer.address }}</p>
+            </div>
+        </div>
+
+        <h4 class="mt-4">تعاملات</h4>
+        <ul class="list-group">
+            {% for interaction in interactions %}
+            <li class="list-group-item">
+                <strong>{{ interaction.date }}</strong>: {{ interaction.description }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

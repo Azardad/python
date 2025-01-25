@@ -1,0 +1,18 @@
+{% extends 'crm/base.html' %}
+
+{% block title %}خانه{% endblock %}
+
+{% block content %}
+<div class="card shadow">
+    <div class="card-header bg-primary text-white">
+        <h3 class="card-title">خوش آمدید به سیستم CRM</h3>
+    </div>
+    <div class="card-body">
+        <p>از منوی بالا برای دسترسی به بخش‌های مختلف استفاده کنید.</p>
+        <ul>
+            <li><a href="{{ admin_url }}" class="btn btn-primary">پنل ادمین</a></li>
+            <li class="mt-2"><a href="{{ customer_list_url }}" class="btn btn-success">لیست مشتریان</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
